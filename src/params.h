@@ -64,6 +64,7 @@ public:
   std::string bin_file; // name with .bin extension
   std::string freq_file; // name with .frq extension
   std::string meta_file; // name with .met extension
+  bool direct_sampling = false;
 };
 
 #endif // PARAMS_H
