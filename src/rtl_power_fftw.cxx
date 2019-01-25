@@ -96,6 +96,16 @@ int main(int argc, char **argv)
       std::cerr << "PPM error set to: " << params.ppm_error << std::endl;
     }
 
+    // Set direct sampling
+    if(params.direct_sampling) {
+      rtldev.set_direct_sampling(2);  
+      std::cerr << "Direct sampling set to Q-branch." << std::endl;
+    }
+    else {
+      rtldev.set_direct_sampling(0);  
+      std::cerr << "Direct sampling disabled." << std::endl;
+    }
+      
     // Set sample rate
     rtldev.set_sample_rate(params.sample_rate);
     int actual_samplerate = rtldev.sample_rate();
