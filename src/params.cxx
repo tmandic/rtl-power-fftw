@@ -139,6 +139,8 @@ Params::Params(int argc, char** argv) {
     cmd.add( arg_bins );
     TCLAP::ValueArg<std::string> arg_baseline("B","baseline","Subtract baseline, read baseline data from file or stdin.",false,"","file|-");
     cmd.add( arg_baseline );
+    TCLAP::SwitchArg arg_direct_sampling("ds","directs-ampling","Set direct sampling.", direct_sampling);
+    cmd.add( arg_direct_sampling );    
 
     cmd.parse(argc, argv);
 
@@ -162,6 +164,7 @@ Params::Params(int argc, char** argv) {
     talkless = arg_quiet.getValue();
     strict_time = arg_strict_time.getValue();
     min_overlap = arg_min_overlap.getValue();
+    direct_samping = arg_direct_samping.getValue();
     //clipped_output_isSet = arg_clipped.getValue();
 
     // Due to USB specifics, buffer length for reading rtl_sdr device
