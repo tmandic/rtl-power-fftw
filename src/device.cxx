@@ -146,7 +146,7 @@ void Rtlsdr::set_sample_rate(uint32_t sample_rate) {
 // \param on 0 means disabled, 1 I-ADC input enabled, 2 Q-ADC input enabled
 // \return 0 on success
 
-void Rtlsdr::set_direct_sampling(bool on) {
+void Rtlsdr::set_direct_sampling(int on) {
   if (rtlsdr_set_direct_sampling(dev, on)) {
     throw RPFexception(
       "RTL device: could not set direct sampling.",
