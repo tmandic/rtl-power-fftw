@@ -44,7 +44,7 @@ public:
   void set_frequency(uint32_t frequency);
   void set_freq_correction(int ppm_error);
   void set_sample_rate(uint32_t sample_rate);
-  void set_direct_sampling(bool on);
+  void set_direct_sampling(int on);
   
   // Convenience functions.
   int nearest_gain(int gain) const;
