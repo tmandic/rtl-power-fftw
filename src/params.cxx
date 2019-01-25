@@ -164,7 +164,7 @@ Params::Params(int argc, char** argv) {
     talkless = arg_quiet.getValue();
     strict_time = arg_strict_time.getValue();
     min_overlap = arg_min_overlap.getValue();
-    direct_samping = arg_direct_samping.getValue();
+    direct_sampling = arg_direct_sampling.getValue();
     //clipped_output_isSet = arg_clipped.getValue();
 
     // Due to USB specifics, buffer length for reading rtl_sdr device
