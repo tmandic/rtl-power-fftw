@@ -137,6 +137,23 @@ void Rtlsdr::set_sample_rate(uint32_t sample_rate) {
   }
 }
 
+// Enable or disable the direct sampling mode. When enabled, the IF mode
+// of the RTL2832 is activated, and rtlsdr_set_center_freq() will control
+// the IF-frequency of the DDC, which can be used to tune from 0 to 28.8 MHz
+// (xtal frequency of the RTL2832).
+//
+// \param dev the device handle given by rtlsdr_open()
+// \param on 0 means disabled, 1 I-ADC input enabled, 2 Q-ADC input enabled
+// \return 0 on success
+
+void Rtlsdr::set_direct_sampling(bool on) {
+  if (rtlsdr_set_direct_sampling(dev, on)) {
+    throw RPFexception(
+      "RTL device: could not set direct sampling.",
+      ReturnValue::HardwareError);
+  }
+}
+
 int Rtlsdr::nearest_gain(int gain) const {
   int dif = std::numeric_limits<int>::max();
   int selected = 0;
