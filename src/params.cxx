@@ -139,7 +139,7 @@ Params::Params(int argc, char** argv) {
     cmd.add( arg_bins );
     TCLAP::ValueArg<std::string> arg_baseline("B","baseline","Subtract baseline, read baseline data from file or stdin.",false,"","file|-");
     cmd.add( arg_baseline );
-    TCLAP::SwitchArg arg_direct_sampling("ds","directs-ampling","Set direct sampling.", direct_sampling);
+    TCLAP::SwitchArg arg_direct_sampling("x","directs-sampling","Set direct sampling.", direct_sampling);
     cmd.add( arg_direct_sampling );    
 
     cmd.parse(argc, argv);
