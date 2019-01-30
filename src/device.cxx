@@ -154,6 +154,16 @@ void Rtlsdr::set_direct_sampling(int on) {
   }
 }
 
+// 0 - ON; 1 - OFF
+void Rtlsdr::set_agc(int on) {
+  if (rtlsdr_set_agc_mode(dev, on)) {
+    throw RPFexception(
+      "RTL device: could not set agc mode.",
+      ReturnValue::HardwareError);
+  }
+}
+
+
 int Rtlsdr::nearest_gain(int gain) const {
   int dif = std::numeric_limits<int>::max();
   int selected = 0;
