@@ -105,6 +105,10 @@ int main(int argc, char **argv)
       rtldev.set_direct_sampling(0);  
       std::cerr << "Direct sampling disabled." << std::endl;
     }
+    
+    // Set agc mode
+    rtldev.set_agc(0);  
+    std::cerr << "AGC mode set to 0." << std::endl;    
       
     // Set sample rate
     rtldev.set_sample_rate(params.sample_rate);
